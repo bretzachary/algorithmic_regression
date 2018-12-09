@@ -35,5 +35,6 @@ def forward_selected(data, response):
             current_score = best_new_score
     formula = "{} ~ {} + 1".format(response,
                                    ' + '.join(selected))
+
     model = smf.ols(formula, data).fit()
     return model
